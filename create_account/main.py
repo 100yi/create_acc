@@ -25,11 +25,11 @@ def create_acc(type_mail='@mail.ru'):
     email += type_mail
     print(email, password)
     time_create = datetime.datetime.now()
-    data = {'email': email, 'password': password, 'no_importtant_data': {'time_create': f'{time_create}', 'lfi': 1}}
+    data = {'email': email, 'password': password, 'no_importtant_data': {'lfi': 1}}
     with open('data.json', 'r') as file:
         r = json.load(file)
         r.append(data)
-    with open('data.json', 'a') as file:
+    with open('data.json', 'w') as file:
         json.dump(r, file, indent=4)
 
 
